@@ -7,17 +7,19 @@ HVAC Runtime is a Home Assistant Lovelace custom card that shows a vertical runt
 ### HACS custom repository
 
 1. In Home Assistant, open **HACS**.
-2. Open **Custom repositories**.
-3. Add this repository URL:
+2. Click the top-right three-dot menu.
+3. Open **Custom repositories**.
+4. Add this repository URL:
 
    `https://github.com/bishwashere/hvac-runtime`
 
-4. Set **Type** to **Dashboard**.
-5. Click **Add**.
-6. Go back to HACS and search for **HVAC Runtime**.
-7. Open **HVAC Runtime**.
-8. Click **Download**.
-9. Refresh your browser after HACS finishes installing it.
+5. Set **Type** to **Dashboard**.
+6. Click **Add**.
+7. Go back to HACS and search for **HVAC Runtime**.
+8. Open **HVAC Runtime**.
+9. Click the top-right three-dot menu.
+10. Click **Download**.
+11. Refresh your browser after HACS finishes installing it.
 
 ### Manual install
 
