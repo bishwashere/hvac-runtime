@@ -23,7 +23,7 @@ HVAC Runtime is a Home Assistant Lovelace custom card that shows a vertical runt
 
 ### Manual install
 
-1. Download `dist/hvac-runtime.js` from this repository.
+1. Download `hvac-runtime.js` from this repository.
 2. Copy it to your Home Assistant `www` folder as:
 
    `/config/www/hvac-runtime.js`
@@ -84,7 +84,7 @@ grid_options:
 Copy the current development file into Home Assistant:
 
 ```bash
-cp dist/hvac-runtime.js /config/www/hvac-runtime.js
+cp hvac-runtime.js /config/www/hvac-runtime.js
 ```
 
 Then add or update the Lovelace resource:
