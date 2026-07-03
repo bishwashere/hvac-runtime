@@ -69,7 +69,7 @@ grid_options:
 | `type` | Yes | Must be `custom:hvac-runtime`. |
 | `entity` | Yes | Climate entity to read history from. |
 | `title` | No | Card title. Defaults to `HVAC Runtime`. |
-| `hours` | No | Number of hours to show. Defaults to `3`. |
+| `hours` | No | Number of hours to show. Defaults to `12`. |
 | `height` | No | Timeline height in pixels. Defaults to `240`. |
 | `color` | No | Runtime block color. Defaults to Home Assistant primary color. |
 | `running_actions` | No | HVAC actions counted as runtime. Defaults to `cooling` and `heating`. |

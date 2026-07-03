@@ -1,13 +1,21 @@
 class HvacRuntime extends HTMLElement {
   static getStubConfig() {
-    return { entity: 'climate.living_room', hours: 3 };
+    return {
+      entity: 'climate.living_room',
+      title: 'HVAC Runtime (12h)',
+      hours: 12,
+      grid_options: {
+        columns: 6,
+        rows: 4,
+      },
+    };
   }
 
   setConfig(config) {
     if (!config.entity) throw new Error('hvac-runtime: entity is required');
     this._config = {
       title: 'HVAC Runtime',
-      hours: 3,
+      hours: 12,
       color: 'var(--primary-color, #2196f3)',
       height: 240,
       running_actions: ['cooling', 'heating'],
