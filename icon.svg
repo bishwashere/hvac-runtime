@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">HVAC Runtime icon</title>
+  <desc id="desc">A runtime chart with cool and warm HVAC waves.</desc>
+  <defs>
+    <linearGradient id="bg" x1="74" y1="58" x2="438" y2="454" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="94" y="100" width="324" height="312" rx="42" fill="#ffffff"/>
+  <path fill="#e2e8f0" d="M144 150h48v212h-48zM232 150h48v212h-48zM320 150h48v212h-48z"/>
+  <path fill="#06b6d4" d="M144 182h224v34H144zM144 264h224v34H144zM144 346h168v34H144z"/>
+  <path fill="#f97316" d="M144 224h112v28H144zM144 306h72v28h-72z"/>
+  <path fill="#0f172a" opacity=".72" d="M144 394h224a14 14 0 0 1 0 28H144a14 14 0 0 1 0-28Zm0-304h224a14 14 0 0 1 0 28H144a14 14 0 0 1 0-28Z"/>
+</svg>
