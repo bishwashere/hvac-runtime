@@ -41,6 +41,17 @@ type: module
 
 4. Refresh your browser.
 
+### Add it to a dashboard
+
+1. Open the dashboard where you want the card.
+2. Click the top-right three-dot menu.
+3. Click **Edit dashboard**.
+4. Click **Add card**.
+5. Choose **Manual**.
+6. Paste the YAML from the example below.
+7. Replace `climate.living_room` with your own climate entity.
+8. Click **Save**.
+
 ## Basic Example
 
 ```yaml
@@ -80,7 +91,6 @@ grid_options:
 - Uses the Home Assistant history API from the browser.
 - Requires history to be enabled for the selected climate entity.
 - Counts `hvac_action: cooling` and `hvac_action: heating` as runtime by default.
-- If the example entity is left unchanged or the configured entity does not exist, the card shows a setup message instead of an empty chart.
 
 ---
 
