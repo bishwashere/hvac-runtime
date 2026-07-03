@@ -44,6 +44,18 @@ title: HVAC Runtime (12h)
 hours: 12
 ```
 
+For Home Assistant sections dashboards, you can match another card width with `grid_options`:
+
+```yaml
+type: custom:hvac-runtime
+entity: climate.living_room
+title: HVAC Runtime (12h)
+hours: 12
+grid_options:
+  columns: 6
+  rows: 4
+```
+
 ## Configuration
 
 | Option | Required | Description |
