@@ -1,6 +1,6 @@
 class HvacRuntime extends HTMLElement {
   static getStubConfig() {
-    return { entity: 'climate.dining_room', hours: 3 };
+    return { entity: 'climate.living_room', hours: 3 };
   }
 
   setConfig(config) {

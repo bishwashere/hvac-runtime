@@ -33,7 +33,7 @@ type: module
 
 ```yaml
 type: custom:hvac-runtime
-entity: climate.dining_room
+entity: climate.living_room
 title: HVAC Runtime (12h)
 hours: 12
 height: 240
