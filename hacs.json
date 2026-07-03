@@ -1,0 +1,5 @@
+{
+  "name": "HVAC Runtime",
+  "render_readme": true,
+  "filename": "dist/hvac-runtime.js"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "hvac-runtime",
+  "version": "0.1.0",
+  "description": "Home Assistant Lovelace card for HVAC runtime timelines.",
+  "main": "dist/hvac-runtime.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "check": "node --check dist/hvac-runtime.js"
+  },
+  "keywords": [
+    "home-assistant",
+    "lovelace",
+    "climate",
+    "custom-card"
+  ],
+  "license": "MIT"
+}
