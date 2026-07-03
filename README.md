@@ -14,8 +14,10 @@ HVAC Runtime is a Home Assistant Lovelace custom card that shows a vertical runt
 
 4. Set **Type** to **Dashboard**.
 5. Click **Add**.
-6. Install **HVAC Runtime**.
-7. Refresh your browser.
+6. Go back to HACS and search for **HVAC Runtime**.
+7. Open **HVAC Runtime**.
+8. Click **Download**.
+9. Refresh your browser after HACS finishes installing it.
 
 ### Manual install
 
