@@ -1,54 +1,85 @@
 # HVAC Runtime
 
-HVAC Runtime is a Home Assistant Lovelace custom card that shows a vertical runtime timeline for a climate entity. It was extracted from a working `ac-runtime-card` setup and renamed for a standalone repo.
+HVAC Runtime is a Home Assistant Lovelace custom card that shows a vertical runtime timeline for a climate entity. It highlights run sessions, off gaps, and total runtime over a selected time window.
 
-This card can be installed manually or through HACS as a custom repository.
+## Installation
 
-## HACS custom repository install
+### HACS custom repository
 
-1. In HACS, open **Custom repositories**.
-2. Add `https://github.com/bishwashere/hvac-runtime`.
-3. Select category **Lovelace**.
-4. Install the card.
-5. Add the card to your dashboard using `custom:hvac-runtime`.
+1. In Home Assistant, open **HACS**.
+2. Open **Custom repositories**.
+3. Add this repository URL:
 
-After install, the resource should point to the installed JavaScript file managed by HACS.
+   `https://github.com/bishwashere/hvac-runtime`
 
-## Local install while developing
+4. Select category **Lovelace**.
+5. Install **HVAC Runtime**.
+6. Refresh your browser.
 
-Copy `dist/hvac-runtime.js` into Home Assistant:
+### Manual install
 
-```bash
-cp dist/hvac-runtime.js /config/www/hvac-runtime.js
-```
+1. Download `dist/hvac-runtime.js` from this repository.
+2. Copy it to your Home Assistant `www` folder as:
 
-Add it as a Lovelace resource:
+   `/config/www/hvac-runtime.js`
+
+3. Add it as a Lovelace resource:
 
 ```yaml
 url: /local/hvac-runtime.js
 type: module
 ```
 
-## Example card
+4. Refresh your browser.
+
+## Basic Example
 
 ```yaml
 type: custom:hvac-runtime
 entity: climate.living_room
 title: HVAC Runtime (12h)
 hours: 12
-height: 240
-color: var(--primary-color)
 ```
+
+## Configuration
+
+| Option | Required | Description |
+| --- | --- | --- |
+| `type` | Yes | Must be `custom:hvac-runtime`. |
+| `entity` | Yes | Climate entity to read history from. |
+| `title` | No | Card title. Defaults to `HVAC Runtime`. |
+| `hours` | No | Number of hours to show. Defaults to `3`. |
+| `height` | No | Timeline height in pixels. Defaults to `240`. |
+| `color` | No | Runtime block color. Defaults to Home Assistant primary color. |
+| `running_actions` | No | HVAC actions counted as runtime. Defaults to `cooling` and `heating`. |
+| `refresh_seconds` | No | How often the card refreshes history. Defaults to `60`. |
 
 ## Notes
 
 - Uses the Home Assistant history API from the browser.
-- Treats `hvac_action: cooling` and `hvac_action: heating` as runtime by default.
-- Keeps the original timeline behavior: run blocks, off gaps, and total runtime summary.
+- Requires history to be enabled for the selected climate entity.
+- Counts `hvac_action: cooling` and `hvac_action: heating` as runtime by default.
 
-## Status
+---
 
-- Local repo scaffolded
-- Existing AC runtime logic ported to `custom:hvac-runtime`
-- HACS custom repository metadata added
-- Needs testing in the live dashboard before release packaging
+## Local Development
+
+Copy the current development file into Home Assistant:
+
+```bash
+cp dist/hvac-runtime.js /config/www/hvac-runtime.js
+```
+
+Then add or update the Lovelace resource:
+
+```yaml
+url: /local/hvac-runtime.js
+type: module
+```
+
+## Project Status
+
+- Standalone JavaScript custom card
+- HACS custom repository metadata included
+- Tested in a live Home Assistant dashboard
+- Visual editor and full build pipeline are not included yet
