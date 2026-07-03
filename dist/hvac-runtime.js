@@ -27,11 +27,27 @@ class HvacRuntime extends HTMLElement {
 
   set hass(hass) {
     this._hass = hass;
+    const setupMessage = this._setupMessage();
+    if (setupMessage) {
+      this._renderNotice(setupMessage);
+      return;
+    }
+
     const now = Date.now();
     if (now - this._lastFetch > this._config.refresh_seconds * 1000) {
       this._lastFetch = now;
       this._fetchAndRender();
     }
+  }
+
+  _setupMessage() {
+    if (!this._hass || !this._config?.entity) return undefined;
+    if (this._hass.states[this._config.entity]) return undefined;
+
+    if (this._config.entity === 'climate.living_room') {
+      return 'Replace the example entity climate.living_room with your real climate entity.';
+    }
+    return `Entity ${this._config.entity} was not found. Choose a climate entity that exists in Home Assistant.`;
   }
 
   async _fetchAndRender() {
@@ -51,6 +67,11 @@ class HvacRuntime extends HTMLElement {
     }
 
     const states = (history && history[0]) || [];
+    if (states.length === 0) {
+      this._renderNotice(`No history was found for ${cfg.entity} in the last ${cfg.hours} hours.`);
+      return;
+    }
+
     const sessions = this._computeSessions(states, start.getTime(), end.getTime());
     this._render(sessions, start.getTime(), end.getTime());
   }
@@ -123,6 +144,10 @@ class HvacRuntime extends HTMLElement {
     this._shell(`<div class="error">${this._escape(message)}</div>`);
   }
 
+  _renderNotice(message) {
+    this._shell(`<div class="notice">${this._escape(message)}</div>`);
+  }
+
   _render(sessions, startMs, endMs) {
     const height = this._config.height;
     const span = endMs - startMs;
@@ -186,6 +211,7 @@ class HvacRuntime extends HTMLElement {
           hvac-runtime .runlabel { font-size: 10px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0 4px; }
           hvac-runtime .gap { position: absolute; left: 0; right: 0; display: flex; align-items: center; justify-content: center; }
           hvac-runtime .gap span { font-size: 10px; color: var(--secondary-text-color); }
+          hvac-runtime .notice { padding: 16px; color: var(--secondary-text-color); line-height: 1.4; }
           hvac-runtime .error { padding: 16px; color: var(--error-color, #db4437); }
         </style>
         ${body}

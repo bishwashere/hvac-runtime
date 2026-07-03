@@ -80,6 +80,7 @@ grid_options:
 - Uses the Home Assistant history API from the browser.
 - Requires history to be enabled for the selected climate entity.
 - Counts `hvac_action: cooling` and `hvac_action: heating` as runtime by default.
+- If the example entity is left unchanged or the configured entity does not exist, the card shows a setup message instead of an empty chart.
 
 ---
 
