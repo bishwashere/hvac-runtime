@@ -198,7 +198,9 @@ class HvacRuntime extends HTMLElement {
   }
 }
 
-customElements.define('hvac-runtime', HvacRuntime);
+if (!customElements.get('hvac-runtime')) {
+  customElements.define('hvac-runtime', HvacRuntime);
+}
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: 'hvac-runtime',
