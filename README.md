@@ -6,6 +6,10 @@
 
 HVAC Runtime is a Home Assistant Lovelace custom card that shows a vertical runtime timeline for a climate entity. It highlights run sessions, off gaps, and total runtime over a selected time window.
 
+<p align="center">
+  <img src="./assets/hvac-runtime-preview.jpg" alt="HVAC Runtime card preview" width="360">
+</p>
+
 ## Installation
 
 ### HACS custom repository
